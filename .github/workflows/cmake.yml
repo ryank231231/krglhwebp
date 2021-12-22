@@ -48,7 +48,7 @@ jobs:
     
     - name: Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
+      if: ${{env.VERSION}}
       with:
         prerelease: 'true'
         files: '${{github.workspace}}/build/${{env.BUILD_TYPE}}/krglhwebp.dll'
